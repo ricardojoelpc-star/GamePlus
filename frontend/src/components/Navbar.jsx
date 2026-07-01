@@ -1,30 +1,42 @@
-function Navbar(){
+import { useAuth } from "../contexts/AuthContext";
 
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+import "../styles/Navbar.css";
 
-    return(
+function Navbar() {
 
-        <nav style={{
+    const { usuario, logout } = useAuth();
 
-            height:"70px",
-            background:"#2563EB",
-            color:"white",
+    return (
 
-            display:"flex",
-            justifyContent:"space-between",
-            alignItems:"center",
+        <nav className="navbar">
 
-            padding:"0 30px"
+            <h2 className="navbar-title">
 
-        }}>
+                GAMEPLUS
 
-            <h2>GAMEPLUS</h2>
+            </h2>
 
-            <span>
+            <div className="navbar-user">
 
-                {usuario?.nombre}
+                <span>
 
-            </span>
+                    {usuario?.nombre}
+
+                </span>
+
+                <button
+
+                    className="logout-button"
+
+                    onClick={logout}
+
+                >
+
+                    Cerrar sesión
+
+                </button>
+
+            </div>
 
         </nav>
 
@@ -32,4 +44,4 @@ function Navbar(){
 
 }
 
-export default Navbar; 
+export default Navbar;

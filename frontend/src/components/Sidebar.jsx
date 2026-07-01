@@ -1,36 +1,38 @@
 import { Link } from "react-router-dom";
 
-function Sidebar() {
+import "../styles/Sidebar.css";
 
-    return (
+function Sidebar(){
 
-        <aside style={{
+    return(
 
-            width: "250px",
-
-            height: "calc(100vh - 70px)",
-
-            background: "#1E293B",
-
-            color: "white",
-
-            padding: "25px"
-
-        }}>
+        <aside className="sidebar">
 
             <h3>Menú</h3>
 
-            <br />
+            <Link to="/dashboard">
 
-            <Link to="/dashboard">🏠 Dashboard</Link>
+                🏠 Dashboard
 
-            <br /><br />
+            </Link>
 
-            <Link to="/catalog">🎮 Catálogo</Link>
+            <Link to="/catalog">
 
-            <br /><br />
+                🎮 Catálogo
 
-            <Link to="/favorites">⭐ Favoritos</Link>
+            </Link>
+
+            <Link to="/favorites">
+
+                ⭐ Favoritos
+
+            </Link>
+
+            <Link to="/admin">
+
+                ⚙ Administración
+
+            </Link>
 
         </aside>
 

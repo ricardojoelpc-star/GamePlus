@@ -1,36 +1,20 @@
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import MainLayout from "../components/MainLayout";
 
 function Dashboard() {
 
     return (
 
-        <>
+        <MainLayout>
 
-            <Navbar />
+            <h1>Dashboard</h1>
 
-            <div style={{ display: "flex" }}>
+            <p>
 
-                <Sidebar />
+                Bienvenido a GAMEPLUS.
 
-                <main style={{
-                    flex:1,
-                    padding:"40px"
-                }}>
+            </p>
 
-                    <h1>Dashboard</h1>
-
-                    <p>
-
-                        Bienvenido a GAMEPLUS.
-
-                    </p>
-
-                </main>
-
-            </div>
-
-        </>
+        </MainLayout>
 
     );
 

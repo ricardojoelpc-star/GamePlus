@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { login } from "../services/authService";
 import "../styles/Login.css";
+import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
 
     const navigate = useNavigate();
+    const auth = useAuth();
 
     const [correo, setCorreo] = useState("");
     const [password, setPassword] = useState("");
@@ -18,13 +20,10 @@ function Login() {
 
             const respuesta = await login(correo, password);
 
-            localStorage.setItem("token", respuesta.token);
-
-            localStorage.setItem(
-                "usuario",
-                JSON.stringify(respuesta.usuario)
+            auth.login(
+                respuesta.usuario,
+                respuesta.token
             );
-
             alert("Bienvenido " + respuesta.usuario.nombre);
 
             navigate("/dashboard");

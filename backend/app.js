@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
+const favoritoRoutes = require("./routes/favoritoRoutes");
+const videoGameRoutes = require("./routes/videoGameRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
@@ -17,5 +19,7 @@ app.get("/", (req, res) => {
 
 // Rutas de autenticación
 app.use("/api/auth", authRoutes);
+app.use("/api/videojuegos", videoGameRoutes);
+app.use("/api/favoritos", favoritoRoutes);
 
 module.exports = app;

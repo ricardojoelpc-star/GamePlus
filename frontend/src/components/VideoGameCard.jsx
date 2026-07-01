@@ -13,6 +13,12 @@ function VideoGameCard({ juego }) {
 
             <p>{juego.descripcion}</p>
 
+            <button>
+
+                ⭐ Agregar a favoritos
+
+            </button>
+
         </div>
 
     );
