@@ -14,19 +14,43 @@ async function crearUsuario(usuario) {
         `;
 
         await connection.execute(
-    sql,
-    {
-        nombre: usuario.nombre,
-        correo: usuario.correo,
-        password: usuario.password,
-        idioma: usuario.idioma,
-        tema: usuario.tema,
-        modoOscuro: usuario.modoOscuro
-    },
-    {
-        autoCommit: true
+            sql,
+            {
+                nombre: usuario.nombre,
+                correo: usuario.correo,
+                password: usuario.password,
+                idioma: usuario.idioma,
+                tema: usuario.tema,
+                modoOscuro: usuario.modoOscuro
+            },
+            {
+                autoCommit: true
+            }
+        );
+
+    } finally {
+
+        await connection.close();
+
     }
-);
+
+}
+
+async function buscarPorCorreo(correo) {
+
+    const connection = await getConnection();
+
+    try {
+
+        const result = await connection.execute(
+            `SELECT *
+             FROM USUARIOS
+             WHERE CORREO = :correo`,
+            { correo },
+            { outFormat: require("oracledb").OUT_FORMAT_OBJECT }
+        );
+
+        return result.rows[0];
 
     } finally {
 
@@ -37,5 +61,6 @@ async function crearUsuario(usuario) {
 }
 
 module.exports = {
-    crearUsuario
+    crearUsuario,
+    buscarPorCorreo
 };
