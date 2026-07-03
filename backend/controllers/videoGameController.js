@@ -1,12 +1,12 @@
-const rawgService = require("../services/rawgService");
+const gameService = require("../services/gameService");
 
 async function obtenerVideojuegos(req, res) {
 
     try {
 
-        const videojuegos = await rawgService.obtenerVideojuegos();
+        const juegos = await gameService.obtenerVideojuegos();
 
-        res.json(videojuegos);
+        res.json(juegos);
 
     } catch (error) {
 
@@ -21,5 +21,7 @@ async function obtenerVideojuegos(req, res) {
 }
 
 module.exports = {
+
     obtenerVideojuegos
+
 };

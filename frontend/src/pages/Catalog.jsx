@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+
 import MainLayout from "../components/MainLayout";
 import SearchBar from "../components/SearchBar";
 import VideoGameCard from "../components/VideoGameCard";
+
 import { obtenerVideojuegos } from "../services/gameService";
 
 function Catalog() {
@@ -32,7 +34,7 @@ function Catalog() {
     }, []);
 
     const juegosFiltrados = videojuegos.filter((juego) =>
-        juego.titulo
+        (juego.title || "")
             .toLowerCase()
             .includes(busqueda.toLowerCase())
     );

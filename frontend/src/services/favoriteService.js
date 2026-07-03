@@ -4,11 +4,35 @@ const API = axios.create({
     baseURL: "http://localhost:3000/api"
 });
 
-export async function agregarFavorito(idUsuario, idVideojuego){
+// Agregar favorito
+export async function agregarFavorito(idUsuario, juego) {
 
-    return await API.post("/favoritos",{
+    const response = await API.post("/favoritos", {
+
         idUsuario,
-        idVideojuego
+
+        juego
+
     });
+
+    return response.data;
+
+}
+
+// Obtener favoritos
+export async function obtenerFavoritos(idUsuario) {
+
+    const response = await API.get(`/favoritos/${idUsuario}`);
+
+    return response.data;
+
+}
+
+// Eliminar favorito
+export async function eliminarFavorito(idFavorito) {
+
+    const response = await API.delete(`/favoritos/${idFavorito}`);
+
+    return response.data;
 
 }
