@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import MainLayout from "../components/MainLayout";
 import SearchBar from "../components/SearchBar";
@@ -8,7 +9,10 @@ import { obtenerVideojuegos } from "../services/gameService";
 
 function Catalog() {
 
+    const { t } = useTranslation();
+
     const [busqueda, setBusqueda] = useState("");
+
     const [videojuegos, setVideojuegos] = useState([]);
 
     useEffect(() => {
@@ -21,9 +25,11 @@ function Catalog() {
 
                 setVideojuegos(datos);
 
-            } catch (error) {
+            }
 
-                console.error("Error al obtener videojuegos:", error);
+            catch (error) {
+
+                console.error(error);
 
             }
 
@@ -34,36 +40,55 @@ function Catalog() {
     }, []);
 
     const juegosFiltrados = videojuegos.filter((juego) =>
+
         (juego.title || "")
             .toLowerCase()
             .includes(busqueda.toLowerCase())
+
     );
 
     return (
 
         <MainLayout>
 
-            <h1>Catálogo de Videojuegos</h1>
+            <h1>
+
+                {t("catalog.title")}
+
+            </h1>
 
             <SearchBar
+
                 valor={busqueda}
+
                 cambiar={setBusqueda}
+
             />
 
             <div
+
                 style={{
+
                     display: "grid",
+
                     gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+
                     gap: "20px",
+
                     marginTop: "30px"
+
                 }}
+
             >
 
                 {juegosFiltrados.map((juego) => (
 
                     <VideoGameCard
+
                         key={juego.id}
+
                         juego={juego}
+
                     />
 
                 ))}

@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 function SearchBar({ valor, cambiar }) {
+
+    const { t } = useTranslation();
 
     return (
 
@@ -6,25 +10,25 @@ function SearchBar({ valor, cambiar }) {
 
             type="text"
 
-            placeholder="Buscar videojuegos..."
+            placeholder={t("catalog.search")}
 
             value={valor}
 
-            onChange={(e)=>cambiar(e.target.value)}
+            onChange={(e) => cambiar(e.target.value)}
 
             style={{
 
-                width:"100%",
+                width: "100%",
 
-                padding:"15px",
+                padding: "15px",
 
-                borderRadius:"10px",
+                borderRadius: "10px",
 
-                border:"1px solid #CCC",
+                border: "1px solid #CCC",
 
-                fontSize:"16px",
+                fontSize: "16px",
 
-                marginBottom:"25px"
+                marginBottom: "25px"
 
             }}
 

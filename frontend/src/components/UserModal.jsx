@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { actualizarUsuario } from "../services/userService";
 
@@ -16,16 +17,14 @@ function UserModal({
 
 }) {
 
+    const { t } = useTranslation();
+
     const [formulario, setFormulario] = useState({
 
         nombre: "",
-
         correo: "",
-
         idioma: "",
-
         tema: "",
-
         modoOscuro: 0
 
     });
@@ -37,13 +36,9 @@ function UserModal({
             setFormulario({
 
                 nombre: usuario.NOMBRE,
-
                 correo: usuario.CORREO,
-
                 idioma: usuario.IDIOMA,
-
                 tema: usuario.TEMA,
-
                 modoOscuro: usuario.MODO_OSCURO
 
             });
@@ -90,7 +85,11 @@ function UserModal({
 
             console.error(error);
 
-            alert("No fue posible actualizar el usuario.");
+            alert(
+
+                t("userModal.saveError")
+
+            );
 
         }
 
@@ -106,7 +105,7 @@ function UserModal({
 
                 <h2>
 
-                    ✏ Editar Usuario
+                    ✏ {t("userModal.title")}
 
                 </h2>
 
@@ -120,7 +119,7 @@ function UserModal({
 
                         onChange={cambiar}
 
-                        placeholder="Nombre"
+                        placeholder={t("userModal.name")}
 
                     />
 
@@ -132,7 +131,7 @@ function UserModal({
 
                         onChange={cambiar}
 
-                        placeholder="Correo"
+                        placeholder={t("userModal.email")}
 
                     />
 
@@ -144,7 +143,7 @@ function UserModal({
 
                         onChange={cambiar}
 
-                        placeholder="Idioma"
+                        placeholder={t("userModal.language")}
 
                     />
 
@@ -156,7 +155,7 @@ function UserModal({
 
                         onChange={cambiar}
 
-                        placeholder="Tema"
+                        placeholder={t("userModal.theme")}
 
                     />
 
@@ -172,7 +171,7 @@ function UserModal({
 
                         >
 
-                            Cancelar
+                            {t("common.cancel")}
 
                         </button>
 
@@ -184,7 +183,7 @@ function UserModal({
 
                         >
 
-                            Guardar
+                            {t("common.save")}
 
                         </button>
 

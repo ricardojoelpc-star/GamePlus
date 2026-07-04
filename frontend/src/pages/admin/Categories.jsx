@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import MainLayout from "../../components/MainLayout";
 import "../../styles/Categories.css";
@@ -11,6 +12,8 @@ import {
 import CategoryModal from "../../components/CategoryModal";
 
 function Categories() {
+
+    const { t } = useTranslation();
 
     const [categorias, setCategorias] = useState([]);
 
@@ -34,7 +37,9 @@ function Categories() {
 
             setCategorias(datos);
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.error(error);
 
@@ -67,7 +72,9 @@ function Categories() {
     async function borrarCategoria(idCategoria) {
 
         const confirmar = window.confirm(
-            "¿Deseas eliminar esta categoría?"
+
+            t("categories.confirmDelete")
+
         );
 
         if (!confirmar) return;
@@ -78,20 +85,34 @@ function Categories() {
 
             await cargarCategorias();
 
-        } catch (error) {
+            alert(
+
+                t("categories.deleteSuccess")
+
+            );
+
+        }
+
+        catch (error) {
 
             console.error(error);
 
-            alert("No fue posible eliminar la categoría.");
+            alert(
+
+                t("categories.deleteError")
+
+            );
 
         }
 
     }
 
     const categoriasFiltradas = categorias.filter((categoria) =>
+
         categoria.NOMBRE
             .toLowerCase()
             .includes(busqueda.toLowerCase())
+
     );
 
     return (
@@ -104,7 +125,7 @@ function Categories() {
 
                     <h1>
 
-                        📂 Categorías
+                        📂 {t("categories.title")}
 
                     </h1>
 
@@ -113,7 +134,7 @@ function Categories() {
                         onClick={nuevaCategoria}
                     >
 
-                        ➕ Nueva Categoría
+                        ➕ {t("categories.new")}
 
                     </button>
 
@@ -125,7 +146,7 @@ function Categories() {
 
                         type="text"
 
-                        placeholder="🔍 Buscar categoría..."
+                        placeholder={t("categories.search")}
 
                         value={busqueda}
 
@@ -143,9 +164,9 @@ function Categories() {
 
                             <th>ID</th>
 
-                            <th>Nombre</th>
+                            <th>{t("categories.name")}</th>
 
-                            <th>Acciones</th>
+                            <th>{t("categories.actions")}</th>
 
                         </tr>
 
@@ -153,53 +174,57 @@ function Categories() {
 
                     <tbody>
 
-                        {categoriasFiltradas.map((categoria) => (
+                        {
 
-                            <tr key={categoria.ID_CATEGORIA}>
+                            categoriasFiltradas.map((categoria) => (
 
-                                <td>
+                                <tr key={categoria.ID_CATEGORIA}>
 
-                                    {categoria.ID_CATEGORIA}
+                                    <td>
 
-                                </td>
+                                        {categoria.ID_CATEGORIA}
 
-                                <td>
+                                    </td>
 
-                                    {categoria.NOMBRE}
+                                    <td>
 
-                                </td>
+                                        {categoria.NOMBRE}
 
-                                <td>
+                                    </td>
 
-                                    <button
-                                        className="btn-edit"
-                                        onClick={() =>
-                                            editarCategoria(categoria)
-                                        }
-                                    >
+                                    <td>
 
-                                        ✏ Editar
+                                        <button
+                                            className="btn-edit"
+                                            onClick={() =>
+                                                editarCategoria(categoria)
+                                            }
+                                        >
 
-                                    </button>
+                                            ✏ {t("common.edit")}
 
-                                    <button
-                                        className="btn-delete"
-                                        onClick={() =>
-                                            borrarCategoria(
-                                                categoria.ID_CATEGORIA
-                                            )
-                                        }
-                                    >
+                                        </button>
 
-                                        🗑 Eliminar
+                                        <button
+                                            className="btn-delete"
+                                            onClick={() =>
+                                                borrarCategoria(
+                                                    categoria.ID_CATEGORIA
+                                                )
+                                            }
+                                        >
 
-                                    </button>
+                                            🗑 {t("common.delete")}
 
-                                </td>
+                                        </button>
 
-                            </tr>
+                                    </td>
 
-                        ))}
+                                </tr>
+
+                            ))
+
+                        }
 
                     </tbody>
 

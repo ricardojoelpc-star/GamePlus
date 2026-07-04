@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import MainLayout from "../../components/MainLayout";
 import "../../styles/Users.css";
@@ -13,6 +14,8 @@ import {
 import UserModal from "../../components/UserModal";
 
 function Users() {
+
+    const { t } = useTranslation();
 
     const [usuarios, setUsuarios] = useState([]);
 
@@ -36,7 +39,9 @@ function Users() {
 
             setUsuarios(datos);
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.error(error);
 
@@ -54,24 +59,48 @@ function Users() {
 
     async function eliminar(idUsuario) {
 
-        if (!window.confirm("¿Eliminar usuario?")) return;
+        const confirmar = window.confirm(
+
+            t("users.confirmDelete")
+
+        );
+
+        if (!confirmar) return;
 
         try {
 
             await eliminarUsuario(idUsuario);
 
-            cargarUsuarios();
+            await cargarUsuarios();
 
-        } catch (error) {
+            alert(
+
+                t("users.deleteSuccess")
+
+            );
+
+        }
+
+        catch (error) {
 
             console.error(error);
+
+            alert(
+
+                t("users.deleteError")
+
+            );
 
         }
 
     }
 
     const filtrados = usuarios.filter((u) =>
-        u.NOMBRE.toLowerCase().includes(busqueda.toLowerCase())
+
+        u.NOMBRE
+            .toLowerCase()
+            .includes(busqueda.toLowerCase())
+
     );
 
     return (
@@ -84,7 +113,7 @@ function Users() {
 
                     <h1>
 
-                        👥 Usuarios
+                        👥 {t("users.title")}
 
                     </h1>
 
@@ -92,7 +121,7 @@ function Users() {
 
                         type="text"
 
-                        placeholder="Buscar..."
+                        placeholder={t("users.search")}
 
                         value={busqueda}
 
@@ -110,15 +139,15 @@ function Users() {
 
                             <th>ID</th>
 
-                            <th>Nombre</th>
+                            <th>{t("users.name")}</th>
 
-                            <th>Correo</th>
+                            <th>{t("users.email")}</th>
 
-                            <th>Idioma</th>
+                            <th>{t("users.language")}</th>
 
-                            <th>Tema</th>
+                            <th>{t("users.theme")}</th>
 
-                            <th>Acciones</th>
+                            <th>{t("users.actions")}</th>
 
                         </tr>
 
@@ -126,53 +155,79 @@ function Users() {
 
                     <tbody>
 
-                        {filtrados.map((usuario) => (
+                        {
 
-                            <tr key={usuario.ID_USUARIO}>
+                            filtrados.map((usuario) => (
 
-                                <td>{usuario.ID_USUARIO}</td>
+                                <tr key={usuario.ID_USUARIO}>
 
-                                <td>{usuario.NOMBRE}</td>
+                                    <td>
 
-                                <td>{usuario.CORREO}</td>
+                                        {usuario.ID_USUARIO}
 
-                                <td>{usuario.IDIOMA}</td>
+                                    </td>
 
-                                <td>{usuario.TEMA}</td>
+                                    <td>
 
-                                <td>
+                                        {usuario.NOMBRE}
 
-                                    <button
+                                    </td>
 
-                                        className="btn-edit"
+                                    <td>
 
-                                        onClick={() => editar(usuario)}
+                                        {usuario.CORREO}
 
-                                    >
+                                    </td>
 
-                                        ✏ Editar
+                                    <td>
 
-                                    </button>
+                                        {usuario.IDIOMA}
 
-                                    <button
+                                    </td>
 
-                                        className="btn-delete"
+                                    <td>
 
-                                        onClick={() =>
-                                            eliminar(usuario.ID_USUARIO)
-                                        }
+                                        {usuario.TEMA}
 
-                                    >
+                                    </td>
 
-                                        🗑 Eliminar
+                                    <td>
 
-                                    </button>
+                                        <button
 
-                                </td>
+                                            className="btn-edit"
 
-                            </tr>
+                                            onClick={() => editar(usuario)}
 
-                        ))}
+                                        >
+
+                                            ✏ {t("common.edit")}
+
+                                        </button>
+
+                                        <button
+
+                                            className="btn-delete"
+
+                                            onClick={() =>
+
+                                                eliminar(usuario.ID_USUARIO)
+
+                                            }
+
+                                        >
+
+                                            🗑 {t("common.delete")}
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            ))
+
+                        }
 
                     </tbody>
 

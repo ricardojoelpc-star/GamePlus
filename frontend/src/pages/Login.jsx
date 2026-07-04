@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { login } from "../services/authService";
-import "../styles/Login.css";
 import { useAuth } from "../contexts/AuthContext";
+
+import "../styles/Login.css";
 
 function Login() {
 
     const navigate = useNavigate();
+
     const auth = useAuth();
 
+    const { t } = useTranslation();
+
     const [correo, setCorreo] = useState("");
+
     const [password, setPassword] = useState("");
 
     async function iniciarSesion(e) {
@@ -21,16 +28,26 @@ function Login() {
             const respuesta = await login(correo, password);
 
             auth.login(
+
                 respuesta.usuario,
+
                 respuesta.token
+
             );
-            alert("Bienvenido " + respuesta.usuario.nombre);
+
+            alert(
+
+                `${t("dashboard.welcome")} ${respuesta.usuario.nombre}`
+
+            );
 
             navigate("/dashboard");
 
-        } catch (error) {
+        }
 
-            alert("Correo o contraseña incorrectos");
+        catch (error) {
+
+            alert(t("login.invalidCredentials"));
 
             console.error(error);
 
@@ -44,29 +61,47 @@ function Login() {
 
             <div className="login-card">
 
-                <h1>GAMEPLUS</h1>
+                <h1>
 
-                <h2>Bienvenido nuevamente</h2>
+                    GAMEPLUS
+
+                </h1>
+
+                <h2>
+
+                    {t("login.welcome")}
+
+                </h2>
 
                 <form onSubmit={iniciarSesion}>
 
                     <input
+
                         type="email"
-                        placeholder="Correo electrónico"
+
+                        placeholder={t("login.email")}
+
                         value={correo}
+
                         onChange={(e) => setCorreo(e.target.value)}
+
                     />
 
                     <input
+
                         type="password"
-                        placeholder="Contraseña"
+
+                        placeholder={t("login.password")}
+
                         value={password}
+
                         onChange={(e) => setPassword(e.target.value)}
+
                     />
 
                     <button type="submit">
 
-                        Iniciar sesión
+                        {t("login.button")}
 
                     </button>
 
@@ -74,11 +109,11 @@ function Login() {
 
                 <p>
 
-                    ¿No tienes cuenta?
+                    {t("login.noAccount")}{" "}
 
                     <Link to="/register">
 
-                        Registrarse
+                        {t("register.title")}
 
                     </Link>
 

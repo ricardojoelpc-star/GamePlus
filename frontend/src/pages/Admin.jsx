@@ -1,11 +1,15 @@
-import MainLayout from "../components/MainLayout";
-import "../styles/Admin.css";
-
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import MainLayout from "../components/MainLayout";
+
+import "../styles/Admin.css";
 
 function Admin() {
 
     const navigate = useNavigate();
+
+    const { t } = useTranslation();
 
     return (
 
@@ -17,11 +21,15 @@ function Admin() {
 
                     <div>
 
-                        <h1>⚙ Panel de Administración</h1>
+                        <h1>
+
+                            ⚙ {t("admin.title")}
+
+                        </h1>
 
                         <p>
 
-                            Administra todos los módulos de GAMEPLUS.
+                            {t("admin.subtitle")}
 
                         </p>
 
@@ -41,22 +49,27 @@ function Admin() {
 
                         <h2>
 
-                            Categorías
+                            {t("admin.categories")}
 
                         </h2>
 
                         <p>
 
-                            Crear, editar y eliminar categorías.
+                            {t("admin.categoriesDescription")}
 
                         </p>
 
                         <button
+
                             className="btn-primary"
-                            onClick={() => navigate("/admin/categories")}
+
+                            onClick={() =>
+                                navigate("/admin/categories")
+                            }
+
                         >
 
-                            Entrar →
+                            {t("admin.enter")} →
 
                         </button>
 
@@ -72,22 +85,27 @@ function Admin() {
 
                         <h2>
 
-                            Usuarios
+                            {t("admin.users")}
 
                         </h2>
 
                         <p>
 
-                            Gestionar usuarios registrados.
+                            {t("admin.usersDescription")}
 
                         </p>
 
                         <button
+
                             className="btn-primary"
-                            onClick={() => navigate("/admin/users")}
+
+                            onClick={() =>
+                                navigate("/admin/users")
+                            }
+
                         >
 
-                            Entrar →
+                            {t("admin.enter")} →
 
                         </button>
 
@@ -103,22 +121,27 @@ function Admin() {
 
                         <h2>
 
-                            Estadísticas
+                            {t("admin.statistics")}
 
                         </h2>
 
                         <p>
 
-                            Visualizar métricas del sistema.
+                            {t("admin.statisticsDescription")}
 
                         </p>
 
                         <button
+
                             className="btn-primary"
-                            onClick={() => navigate("/admin/statistics")}
+
+                            onClick={() =>
+                                navigate("/admin/statistics")
+                            }
+
                         >
 
-                            Entrar →
+                            {t("admin.enter")} →
 
                         </button>
 

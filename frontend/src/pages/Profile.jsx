@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import MainLayout from "../components/MainLayout";
 import { useAuth } from "../contexts/AuthContext";
+
+import LanguageSelector from "../components/LanguageSelector";
 
 import {
 
@@ -16,6 +19,8 @@ import "../styles/Profile.css";
 function Profile() {
 
     const { usuario } = useAuth();
+
+    const { t } = useTranslation();
 
     const [perfil, setPerfil] = useState({
 
@@ -43,11 +48,7 @@ function Profile() {
 
         try {
 
-            const datos = await obtenerPerfil(
-
-                usuario.id
-
-            );
+            const datos = await obtenerPerfil(usuario.id);
 
             setPerfil({
 
@@ -111,7 +112,11 @@ function Profile() {
 
             }
 
-            alert("Perfil actualizado correctamente.");
+            alert(
+
+                t("profile.success")
+
+            );
 
         }
 
@@ -119,7 +124,11 @@ function Profile() {
 
             console.error(error);
 
-            alert("No fue posible actualizar el perfil.");
+            alert(
+
+                t("profile.error")
+
+            );
 
         }
 
@@ -133,7 +142,7 @@ function Profile() {
 
                 <h1>
 
-                    👤 Mi Perfil
+                    👤 {t("profile.title")}
 
                 </h1>
 
@@ -141,7 +150,7 @@ function Profile() {
 
                     <label>
 
-                        Nombre
+                        {t("profile.name")}
 
                     </label>
 
@@ -156,7 +165,7 @@ function Profile() {
 
                     <label>
 
-                        Correo
+                        {t("profile.email")}
 
                     </label>
 
@@ -171,22 +180,15 @@ function Profile() {
 
                     <label>
 
-                        Idioma
+                        {t("profile.language")}
 
                     </label>
 
-                    <input
-
-                        type="text"
-                        name="idioma"
-                        value={perfil.idioma}
-                        onChange={cambiar}
-
-                    />
+                    <LanguageSelector />
 
                     <label>
 
-                        Tema
+                        {t("profile.theme")}
 
                     </label>
 
@@ -201,7 +203,7 @@ function Profile() {
 
                     <label>
 
-                        Nueva contraseña
+                        {t("profile.password")}
 
                     </label>
 
@@ -210,7 +212,7 @@ function Profile() {
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Deja vacío si no deseas cambiarla"
+                        placeholder={t("profile.passwordPlaceholder")}
 
                     />
 
@@ -221,7 +223,7 @@ function Profile() {
 
                     >
 
-                        Guardar cambios
+                        {t("profile.save")}
 
                     </button>
 

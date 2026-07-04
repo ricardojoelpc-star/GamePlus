@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+import MainLayout from "../components/MainLayout";
+import VideoGameCard from "../components/VideoGameCard";
 
 import {
     obtenerFavoritos,
@@ -6,9 +10,10 @@ import {
 } from "../services/favoriteService";
 
 import { useAuth } from "../contexts/AuthContext";
-import VideoGameCard from "../components/VideoGameCard";
 
 function Favorites() {
+
+    const { t } = useTranslation();
 
     const [favoritos, setFavoritos] = useState([]);
 
@@ -22,7 +27,9 @@ function Favorites() {
 
             setFavoritos(datos);
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.error(error);
 
@@ -38,13 +45,23 @@ function Favorites() {
 
             await cargarFavoritos();
 
-            alert("Favorito eliminado correctamente.");
+            alert(
 
-        } catch (error) {
+                t("favorites.removeSuccess")
+
+            );
+
+        }
+
+        catch (error) {
 
             console.error(error);
 
-            alert("No fue posible eliminar el favorito.");
+            alert(
+
+                t("favorites.removeError")
+
+            );
 
         }
 
@@ -62,41 +79,93 @@ function Favorites() {
 
     return (
 
-        <div style={{ padding: "30px" }}>
+        <MainLayout>
 
-            <h1>⭐ Mis Favoritos</h1>
+            <div style={{ padding: "30px" }}>
 
-            <p>Total de favoritos: {favoritos.length}</p>
+                <h1>
 
-            <div
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-                    gap: "20px",
-                    marginTop: "30px"
-                }}
-            >
+                    ⭐ {t("favorites.title")}
 
-                {favoritos.map((juego) => (
+                </h1>
 
-                    <VideoGameCard
-                        key={juego.ID_FAVORITO}
-                        juego={{
-                            id: juego.ID_VIDEOJUEGO,
-                            title: juego.TITULO,
-                            thumbnail: juego.IMAGEN,
-                            genre: "Favorito",
-                            platform: "GAMEPLUS"
-                        }}
-                        mostrarBotonFavorito={false}
-                        onEliminar={() => eliminar(juego.ID_FAVORITO)}
-                    />
+                <p>
 
-                ))}
+                    {t("favorites.total")} {favoritos.length}
+
+                </p>
+
+                {
+
+                    favoritos.length === 0 && (
+
+                        <p>
+
+                            {t("favorites.empty")}
+
+                        </p>
+
+                    )
+
+                }
+
+                <div
+
+                    style={{
+
+                        display: "grid",
+
+                        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+
+                        gap: "20px",
+
+                        marginTop: "30px"
+
+                    }}
+
+                >
+
+                    {
+
+                        favoritos.map((juego) => (
+
+                            <VideoGameCard
+
+                                key={juego.ID_FAVORITO}
+
+                                juego={{
+
+                                    id: juego.ID_VIDEOJUEGO,
+
+                                    title: juego.TITULO,
+
+                                    thumbnail: juego.IMAGEN,
+
+                                    genre: "Favorito",
+
+                                    platform: "GAMEPLUS"
+
+                                }}
+
+                                mostrarBotonFavorito={false}
+
+                                onEliminar={() =>
+
+                                    eliminar(juego.ID_FAVORITO)
+
+                                }
+
+                            />
+
+                        ))
+
+                    }
+
+                </div>
 
             </div>
 
-        </div>
+        </MainLayout>
 
     );
 

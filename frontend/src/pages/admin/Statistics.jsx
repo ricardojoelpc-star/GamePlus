@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import MainLayout from "../../components/MainLayout";
+
 import "../../styles/Statistics.css";
 
 import { obtenerEstadisticas } from "../../services/statisticsService";
 
 function Statistics() {
+
+    const { t } = useTranslation();
 
     const [datos, setDatos] = useState({
 
@@ -30,7 +34,9 @@ function Statistics() {
 
             setDatos(respuesta);
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.error(error);
 
@@ -44,39 +50,75 @@ function Statistics() {
 
             <div className="statistics">
 
-                <h1>📊 Estadísticas</h1>
+                <h1>
+
+                    📊 {t("statistics.title")}
+
+                </h1>
 
                 <div className="statistics-grid">
 
                     <div className="stat-card">
 
-                        <h2>{datos.usuarios}</h2>
+                        <h2>
 
-                        <p>Usuarios</p>
+                            {datos.usuarios}
 
-                    </div>
+                        </h2>
 
-                    <div className="stat-card">
+                        <p>
 
-                        <h2>{datos.categorias}</h2>
+                            {t("statistics.users")}
 
-                        <p>Categorías</p>
-
-                    </div>
-
-                    <div className="stat-card">
-
-                        <h2>{datos.videojuegos}</h2>
-
-                        <p>Videojuegos</p>
+                        </p>
 
                     </div>
 
                     <div className="stat-card">
 
-                        <h2>{datos.favoritos}</h2>
+                        <h2>
 
-                        <p>Favoritos</p>
+                            {datos.categorias}
+
+                        </h2>
+
+                        <p>
+
+                            {t("statistics.categories")}
+
+                        </p>
+
+                    </div>
+
+                    <div className="stat-card">
+
+                        <h2>
+
+                            {datos.videojuegos}
+
+                        </h2>
+
+                        <p>
+
+                            {t("statistics.games")}
+
+                        </p>
+
+                    </div>
+
+                    <div className="stat-card">
+
+                        <h2>
+
+                            {datos.favoritos}
+
+                        </h2>
+
+                        <p>
+
+                            {t("statistics.favorites")}
+
+                        </p>
 
                     </div>
 

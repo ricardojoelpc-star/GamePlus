@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import MainLayout from "../components/MainLayout";
-
 import { useAuth } from "../contexts/AuthContext";
-
 import { obtenerEstadisticas } from "../services/dashboardService";
 
 import "../styles/Dashboard.css";
@@ -12,17 +11,19 @@ function Dashboard() {
 
     const { usuario } = useAuth();
 
+    const { t } = useTranslation();
+
     const [estadisticas, setEstadisticas] = useState({
 
         favoritos: 0,
-
         videojuegos: 0,
-
         categorias: 0
 
     });
 
     useEffect(() => {
+
+        if (!usuario) return;
 
         async function cargarDashboard() {
 
@@ -32,7 +33,9 @@ function Dashboard() {
 
                 setEstadisticas(datos);
 
-            } catch (error) {
+            }
+
+            catch (error) {
 
                 console.error(error);
 
@@ -40,11 +43,7 @@ function Dashboard() {
 
         }
 
-        if (usuario) {
-
-            cargarDashboard();
-
-        }
+        cargarDashboard();
 
     }, [usuario]);
 
@@ -58,13 +57,13 @@ function Dashboard() {
 
                     <h1 className="dashboard-title">
 
-                        👋 Bienvenido, {usuario?.nombre}
+                        👋 {t("dashboard.welcome")}, {usuario?.nombre}
 
                     </h1>
 
                     <p className="dashboard-subtitle">
 
-                        Tu centro de control de GAMEPLUS.
+                        {t("dashboard.subtitle")}
 
                     </p>
 
@@ -82,7 +81,7 @@ function Dashboard() {
 
                         <div className="card-title">
 
-                            Favoritos
+                            {t("dashboard.favorites")}
 
                         </div>
 
@@ -104,7 +103,7 @@ function Dashboard() {
 
                         <div className="card-title">
 
-                            Videojuegos
+                            {t("dashboard.games")}
 
                         </div>
 
@@ -126,93 +125,13 @@ function Dashboard() {
 
                         <div className="card-title">
 
-                            Categorías
+                            {t("dashboard.categories")}
 
                         </div>
 
                         <div className="card-value">
 
                             {estadisticas.categorias}
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="dashboard-actions">
-
-                    <h2>
-
-                        Accesos rápidos
-
-                    </h2>
-
-                    <div className="action-grid">
-
-                        <div className="action-card">
-
-                            <div style={{ fontSize: "45px" }}>
-
-                                🎮
-
-                            </div>
-
-                            <h3>
-
-                                Catálogo
-
-                            </h3>
-
-                            <p>
-
-                                Explora todos los videojuegos disponibles.
-
-                            </p>
-
-                        </div>
-
-                        <div className="action-card">
-
-                            <div style={{ fontSize: "45px" }}>
-
-                                ⭐
-
-                            </div>
-
-                            <h3>
-
-                                Favoritos
-
-                            </h3>
-
-                            <p>
-
-                                Consulta rápidamente tus videojuegos favoritos.
-
-                            </p>
-
-                        </div>
-
-                        <div className="action-card">
-
-                            <div style={{ fontSize: "45px" }}>
-
-                                ⚙
-
-                            </div>
-
-                            <h3>
-
-                                Administración
-
-                            </h3>
-
-                            <p>
-
-                                Gestiona videojuegos y categorías.
-
-                            </p>
 
                         </div>
 

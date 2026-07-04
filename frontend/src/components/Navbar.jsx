@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useAuth } from "../contexts/AuthContext";
 
 import "../styles/Navbar.css";
@@ -5,6 +6,8 @@ import "../styles/Navbar.css";
 function Navbar() {
 
     const { usuario, logout } = useAuth();
+
+    const { t } = useTranslation();
 
     return (
 
@@ -32,7 +35,7 @@ function Navbar() {
 
                 >
 
-                    Cerrar sesión
+                    {t("login.logout")}
 
                 </button>
 

@@ -1,42 +1,45 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import "../styles/Sidebar.css";
 
 function Sidebar() {
 
+    const { t } = useTranslation();
+
     return (
 
         <aside className="sidebar">
 
-            <h3>Menú</h3>
+            <h3>{t("sidebar.menu")}</h3>
 
             <Link to="/profile">
 
-                👤 Mi Perfil
+                👤 {t("sidebar.profile")}
 
             </Link>
 
             <Link to="/dashboard">
 
-                🏠 Dashboard
+                🏠 {t("sidebar.dashboard")}
 
             </Link>
 
             <Link to="/catalog">
 
-                🎮 Catálogo
+                🎮 {t("sidebar.catalog")}
 
             </Link>
 
             <Link to="/favorites">
 
-                ⭐ Favoritos
+                ⭐ {t("sidebar.favorites")}
 
             </Link>
 
             <Link to="/admin">
 
-                ⚙ Administración
+                ⚙ {t("sidebar.admin")}
 
             </Link>
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
     crearCategoria,
@@ -19,6 +20,8 @@ function CategoryModal({
 
 }) {
 
+    const { t } = useTranslation();
+
     const [nombre, setNombre] = useState("");
 
     useEffect(() => {
@@ -27,7 +30,9 @@ function CategoryModal({
 
             setNombre(categoria.NOMBRE);
 
-        } else {
+        }
+
+        else {
 
             setNombre("");
 
@@ -51,7 +56,9 @@ function CategoryModal({
 
                 );
 
-            } else {
+            }
+
+            else {
 
                 await crearCategoria(nombre);
 
@@ -61,11 +68,17 @@ function CategoryModal({
 
             cerrar();
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.error(error);
 
-            alert("Ocurrió un error al guardar la categoría.");
+            alert(
+
+                t("categoryModal.saveError")
+
+            );
 
         }
 
@@ -85,9 +98,9 @@ function CategoryModal({
 
                         categoria
 
-                        ? "✏ Editar Categoría"
+                        ? `✏ ${t("categoryModal.editTitle")}`
 
-                        : "➕ Nueva Categoría"
+                        : `➕ ${t("categoryModal.newTitle")}`
 
                     }
 
@@ -99,11 +112,15 @@ function CategoryModal({
 
                         type="text"
 
-                        placeholder="Nombre de la categoría"
+                        placeholder={t("categoryModal.name")}
 
                         value={nombre}
 
-                        onChange={(e) => setNombre(e.target.value)}
+                        onChange={(e) =>
+
+                            setNombre(e.target.value)
+
+                        }
 
                         required
 
@@ -121,7 +138,7 @@ function CategoryModal({
 
                         >
 
-                            Cancelar
+                            {t("common.cancel")}
 
                         </button>
 
@@ -133,7 +150,7 @@ function CategoryModal({
 
                         >
 
-                            Guardar
+                            {t("common.save")}
 
                         </button>
 

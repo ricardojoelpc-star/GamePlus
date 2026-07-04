@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import "../styles/VideoGameModal.css";
 
@@ -14,16 +15,14 @@ function VideoGameModal({
 
 }) {
 
+    const { t } = useTranslation();
+
     const [formulario, setFormulario] = useState({
 
         title: "",
-
         genre: "",
-
         platform: "",
-
         thumbnail: "",
-
         short_description: ""
 
     });
@@ -41,13 +40,9 @@ function VideoGameModal({
             setFormulario({
 
                 title: "",
-
                 genre: "",
-
                 platform: "",
-
                 thumbnail: "",
-
                 short_description: ""
 
             });
@@ -86,47 +81,80 @@ function VideoGameModal({
 
                 <h2>
 
-                    {videojuego
-                        ? "✏ Editar Videojuego"
-                        : "➕ Nuevo Videojuego"}
+                    {
+
+                        videojuego
+
+                        ? `✏ ${t("videoGameModal.editTitle")}`
+
+                        : `➕ ${t("videoGameModal.newTitle")}`
+
+                    }
 
                 </h2>
 
                 <form onSubmit={enviar}>
 
                     <input
+
                         type="text"
+
                         name="title"
-                        placeholder="Título"
+
+                        placeholder={t("videoGameModal.title")}
+
                         value={formulario.title}
+
                         onChange={cambiar}
+
                         required
+
                     />
 
                     <input
+
                         type="text"
+
                         name="genre"
-                        placeholder="Categoría"
+
+                        placeholder={t("videoGameModal.genre")}
+
                         value={formulario.genre}
+
                         onChange={cambiar}
+
                         required
+
                     />
 
                     <input
+
                         type="text"
+
                         name="platform"
-                        placeholder="Plataforma"
+
+                        placeholder={t("videoGameModal.platform")}
+
                         value={formulario.platform}
+
                         onChange={cambiar}
+
                         required
+
                     />
 
                     <input
+
                         type="text"
+
                         name="thumbnail"
-                        placeholder="URL Imagen"
+
+                        placeholder={t("videoGameModal.image")}
+
                         value={formulario.thumbnail}
+
                         onChange={cambiar}
+
                     />
 
                     <textarea
@@ -135,7 +163,7 @@ function VideoGameModal({
 
                         rows="4"
 
-                        placeholder="Descripción"
+                        placeholder={t("videoGameModal.description")}
 
                         value={formulario.short_description}
 
@@ -155,7 +183,7 @@ function VideoGameModal({
 
                         >
 
-                            Cancelar
+                            {t("common.cancel")}
 
                         </button>
 
@@ -167,7 +195,7 @@ function VideoGameModal({
 
                         >
 
-                            Guardar
+                            {t("common.save")}
 
                         </button>
 

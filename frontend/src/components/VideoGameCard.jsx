@@ -1,14 +1,21 @@
-import "./../styles/VideoGameCard.css";
+import { useTranslation } from "react-i18next";
+
+import "../styles/VideoGameCard.css";
+
 import { agregarFavorito } from "../services/favoriteService";
 import { useAuth } from "../contexts/AuthContext";
 
 function VideoGameCard({
+
     juego,
     mostrarBotonFavorito = true,
     onEliminar
+
 }) {
 
     const { usuario } = useAuth();
+
+    const { t } = useTranslation();
 
     async function guardarFavorito() {
 
@@ -22,13 +29,23 @@ function VideoGameCard({
 
             );
 
-            alert("Favorito agregado correctamente.");
+            alert(
 
-        } catch (error) {
+                t("favorites.addSuccess")
+
+            );
+
+        }
+
+        catch (error) {
 
             console.error(error);
 
-            alert("No fue posible agregar el favorito.");
+            alert(
+
+                t("favorites.addError")
+
+            );
 
         }
 
@@ -39,26 +56,57 @@ function VideoGameCard({
         <div className="game-card">
 
             <img
+
                 src={juego.thumbnail}
+
                 alt={juego.title}
+
             />
 
-            <h3>{juego.title}</h3>
+            <h3>
 
-            <p>{juego.genre}</p>
+                {juego.title}
 
-            <p>{juego.platform}</p>
+            </h3>
+
+            <p>
+
+                <strong>
+
+                    {t("games.genre")}:
+
+                </strong>{" "}
+
+                {juego.genre}
+
+            </p>
+
+            <p>
+
+                <strong>
+
+                    {t("games.platform")}:
+
+                </strong>{" "}
+
+                {juego.platform}
+
+            </p>
 
             {mostrarBotonFavorito ? (
 
                 <button onClick={guardarFavorito}>
-                    ⭐ Agregar a Favoritos
+
+                    ⭐ {t("favorites.add")}
+
                 </button>
 
             ) : (
 
                 <button onClick={onEliminar}>
-                    🗑 Eliminar de Favoritos
+
+                    🗑 {t("favorites.remove")}
+
                 </button>
 
             )}
