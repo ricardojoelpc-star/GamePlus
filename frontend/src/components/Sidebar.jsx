@@ -2,13 +2,19 @@ import { Link } from "react-router-dom";
 
 import "../styles/Sidebar.css";
 
-function Sidebar(){
+function Sidebar() {
 
-    return(
+    return (
 
         <aside className="sidebar">
 
             <h3>Menú</h3>
+
+            <Link to="/profile">
+
+                👤 Mi Perfil
+
+            </Link>
 
             <Link to="/dashboard">
 

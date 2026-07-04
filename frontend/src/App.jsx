@@ -5,7 +5,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Favorites from "./pages/Favorites";
-
+import Users from "./pages/admin/Users";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
+import Categories from "./pages/admin/Categories";
+import Statistics from "./pages/admin/Statistics";
 
 function App() {
 
@@ -15,15 +19,58 @@ function App() {
 
             <Routes>
 
-                <Route path="/" element={<Login />} />
+                <Route
+                    path="/"
+                    element={<Login />}
+                />
 
-                <Route path="/register" element={<Register />} />
+                <Route
+                    path="/register"
+                    element={<Register />}
+                />
 
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route
+                    path="/dashboard"
+                    element={<Dashboard />}
+                />
 
-                <Route path="/catalog" element={<Catalog />} />
+                <Route
+                    path="/catalog"
+                    element={<Catalog />}
+                />
 
-                <Route path="/favorites" element={<Favorites />}/>
+                <Route
+                    path="/favorites"
+                    element={<Favorites />}
+                />
+
+                <Route
+                    path="/admin"
+                    element={<Admin />}
+                />
+
+                <Route
+                    path="/admin/categories"
+                    element={<Categories />}
+                />
+
+                <Route
+                    path="/admin/users"
+                    element={<Users />}
+                />
+
+                <Route
+
+                    path="/profile"
+
+                    element={<Profile />}
+
+                />
+
+                <Route
+                    path="/admin/statistics"
+                    element={<Statistics />}
+                />
 
             </Routes>
 
