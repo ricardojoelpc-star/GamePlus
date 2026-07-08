@@ -1,12 +1,12 @@
-/* ===========================
+/* =====================================
    DASHBOARD
-=========================== */
+===================================== */
 
-.dashboard {
+.dashboard{
 
-    padding: 35px;
+    padding:35px;
 
-    animation: fadeIn .4s ease;
+    animation:fadeIn .4s ease;
 
 }
 
@@ -18,7 +18,7 @@
 
 .dashboard-title{
 
-    color:#1E293B;
+    color:var(--text);
 
     font-size:42px;
 
@@ -30,15 +30,15 @@
 
 .dashboard-subtitle{
 
-    color:#64748B;
+    color:var(--text-secondary);
 
     font-size:18px;
 
 }
 
-/* ===========================
+/* =====================================
    GRID
-=========================== */
+===================================== */
 
 .dashboard-grid{
 
@@ -50,21 +50,23 @@
 
 }
 
-/* ===========================
+/* =====================================
    CARD
-=========================== */
+===================================== */
 
 .dashboard-card{
 
-    background:#FFFFFF;
+    background:var(--surface);
+
+    border:1px solid var(--border);
 
     border-radius:18px;
 
     padding:28px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    box-shadow:var(--shadow);
 
-    transition:.25s;
+    transition:all .25s ease;
 
     cursor:default;
 
@@ -77,8 +79,6 @@
 .dashboard-card:hover{
 
     transform:translateY(-6px);
-
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
 
 }
 
@@ -96,13 +96,13 @@
 
     height:100%;
 
-    background:#2563EB;
+    background:var(--primary);
 
 }
 
-/* ===========================
+/* =====================================
    ICON
-=========================== */
+===================================== */
 
 .card-icon{
 
@@ -112,13 +112,13 @@
 
 }
 
-/* ===========================
+/* =====================================
    TITLE
-=========================== */
+===================================== */
 
 .card-title{
 
-    color:#64748B;
+    color:var(--text-secondary);
 
     font-size:18px;
 
@@ -126,13 +126,13 @@
 
 }
 
-/* ===========================
+/* =====================================
    VALUE
-=========================== */
+===================================== */
 
 .card-value{
 
-    color:#1E293B;
+    color:var(--text);
 
     font-size:48px;
 
@@ -142,9 +142,9 @@
 
 }
 
-/* ===========================
+/* =====================================
    QUICK ACTIONS
-=========================== */
+===================================== */
 
 .dashboard-actions{
 
@@ -153,6 +153,8 @@
 }
 
 .dashboard-actions h2{
+
+    color:var(--text);
 
     margin-bottom:20px;
 
@@ -170,9 +172,9 @@
 
 .action-card{
 
-    background:#2563EB;
+    background:var(--primary);
 
-    color:white;
+    color:var(--button-text);
 
     border-radius:15px;
 
@@ -180,7 +182,7 @@
 
     text-align:center;
 
-    transition:.25s;
+    transition:all .25s ease;
 
     cursor:pointer;
 
@@ -188,7 +190,7 @@
 
 .action-card:hover{
 
-    background:#1D4ED8;
+    background:var(--primary-hover);
 
     transform:translateY(-5px);
 
@@ -196,23 +198,215 @@
 
 .action-card h3{
 
-    color:white;
-
     margin-top:10px;
 
 }
 
 .action-card p{
 
-    color:#D6E4FF;
+    color:#E5E7EB;
 
     margin-top:8px;
 
 }
 
-/* ===========================
+/* =====================================
+   BOTÓN PRINCIPAL
+===================================== */
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:var(--button-text);
+
+    padding:14px 22px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:all .25s ease;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================
+   TOOLBAR
+===================================== */
+
+.admin-toolbar{
+
+    margin-bottom:30px;
+
+}
+
+.admin-toolbar input{
+
+    max-width:350px;
+
+}
+
+/* =====================================
+   TABLA
+===================================== */
+
+.table-container{
+
+    margin-top:30px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.admin-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.admin-table thead{
+
+    background:var(--primary);
+
+}
+
+.admin-table th{
+
+    color:var(--button-text);
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:15px;
+
+}
+
+.admin-table td{
+
+    padding:18px;
+
+    color:var(--text);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.admin-table tbody tr{
+
+    transition:.25s;
+
+}
+
+.admin-table tbody tr:hover{
+
+    background:rgba(37,99,235,.08);
+
+}
+
+/* =====================================
+   IMAGEN
+===================================== */
+
+.table-image{
+
+    width:80px;
+
+    height:45px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+}
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.btn-edit{
+
+    background:#f59e0b;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.btn-edit:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.btn-delete{
+
+    background:#ef4444;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.btn-delete:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================
    RESPONSIVE
-=========================== */
+===================================== */
+
+@media(max-width:900px){
+
+    .table-container{
+
+        overflow-x:auto;
+
+    }
+
+    .admin-table{
+
+        min-width:900px;
+
+    }
+
+}
 
 @media(max-width:768px){
 
@@ -236,9 +430,9 @@
 
 }
 
-/* ===========================
-   ANIMATION
-=========================== */
+/* =====================================
+   ANIMACIÓN
+===================================== */
 
 @keyframes fadeIn{
 
@@ -255,238 +449,6 @@
         opacity:1;
 
         transform:translateY(0);
-
-    }
-
-}
-
-/* ===========================
-   HEADER
-=========================== */
-
-.admin-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:30px;
-
-    flex-wrap:wrap;
-
-    gap:20px;
-
-}
-
-/* ===========================
-   BOTÓN
-=========================== */
-
-.btn-primary{
-
-    background:#2563EB;
-
-    color:white;
-
-    padding:14px 22px;
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-}
-
-.btn-primary:hover{
-
-    background:#1D4ED8;
-
-}
-
-/* ===========================
-   TOOLBAR
-=========================== */
-
-.admin-toolbar{
-
-    margin-bottom:30px;
-
-}
-
-.admin-toolbar input{
-
-    max-width:350px;
-
-}
-
-/* =====================================
-   TABLA DE ADMINISTRACIÓN
-===================================== */
-
-.table-container{
-
-    margin-top:30px;
-
-    background:#FFFFFF;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.admin-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-}
-
-.admin-table thead{
-
-    background:#2563EB;
-
-}
-
-.admin-table th{
-
-    color:white;
-
-    padding:18px;
-
-    font-size:15px;
-
-    text-align:left;
-
-    font-weight:600;
-
-}
-
-.admin-table td{
-
-    padding:18px;
-
-    border-bottom:1px solid #ECECEC;
-
-    color:#334155;
-
-    vertical-align:middle;
-
-}
-
-.admin-table tbody tr{
-
-    transition:.25s;
-
-}
-
-.admin-table tbody tr:hover{
-
-    background:#F8FAFC;
-
-}
-
-/* =====================================
-   IMAGEN
-===================================== */
-
-.table-image{
-
-    width:80px;
-
-    height:45px;
-
-    object-fit:cover;
-
-    border-radius:8px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-
-}
-
-/* =====================================
-   BOTONES
-===================================== */
-
-.btn-edit{
-
-    background:#F59E0B;
-
-    color:white;
-
-    padding:8px 15px;
-
-    border:none;
-
-    border-radius:8px;
-
-    margin-right:10px;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-    font-weight:600;
-
-}
-
-.btn-edit:hover{
-
-    background:#D97706;
-
-    transform:translateY(-2px);
-
-}
-
-.btn-delete{
-
-    background:#EF4444;
-
-    color:white;
-
-    padding:8px 15px;
-
-    border:none;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-    font-weight:600;
-
-}
-
-.btn-delete:hover{
-
-    background:#DC2626;
-
-    transform:translateY(-2px);
-
-}
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media(max-width:900px){
-
-    .table-container{
-
-        overflow-x:auto;
-
-    }
-
-    .admin-table{
-
-        min-width:900px;
 
     }
 

@@ -3,8 +3,10 @@ import { useTranslation } from "react-i18next";
 
 import MainLayout from "../components/MainLayout";
 import { useAuth } from "../contexts/AuthContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 import LanguageSelector from "../components/LanguageSelector";
+import ThemeSelector from "../components/ThemeSelector";
 
 import {
 
@@ -19,6 +21,14 @@ import "../styles/Profile.css";
 function Profile() {
 
     const { usuario } = useAuth();
+
+    const {
+
+        color,
+        theme,
+        cargarPreferencias
+
+    } = useTheme();
 
     const { t } = useTranslation();
 
@@ -60,6 +70,13 @@ function Profile() {
 
             });
 
+            cargarPreferencias({
+
+                tema: datos.TEMA,
+                modoOscuro: datos.MODO_OSCURO
+
+            });
+
         }
 
         catch (error) {
@@ -90,11 +107,21 @@ function Profile() {
 
         try {
 
+            const datosActualizados = {
+
+                ...perfil,
+
+                tema: color,
+
+                modoOscuro: theme === "dark" ? 1 : 0
+
+            };
+
             await actualizarPerfil(
 
                 usuario.id,
 
-                perfil
+                datosActualizados
 
             );
 
@@ -186,20 +213,11 @@ function Profile() {
 
                     <LanguageSelector />
 
-                    <label>
+                    <br />
 
-                        {t("profile.theme")}
+                    <ThemeSelector />
 
-                    </label>
-
-                    <input
-
-                        type="text"
-                        name="tema"
-                        value={perfil.tema}
-                        onChange={cambiar}
-
-                    />
+                    <br />
 
                     <label>
 
@@ -210,15 +228,27 @@ function Profile() {
                     <input
 
                         type="password"
+
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder={t("profile.passwordPlaceholder")}
+
+                        onChange={(e) =>
+
+                            setPassword(e.target.value)
+
+                        }
+
+                        placeholder={
+
+                            t("profile.passwordPlaceholder")
+
+                        }
 
                     />
 
                     <button
 
                         className="btn-primary"
+
                         type="submit"
 
                     >

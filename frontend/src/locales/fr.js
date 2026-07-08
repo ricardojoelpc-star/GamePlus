@@ -180,6 +180,26 @@ const fr = {
 
     },
 
+    themes: {
+
+        blue: "Bleu",
+
+        green: "Vert",
+
+        purple: "Violet",
+
+        darkMode: "Mode sombre",
+
+        lightMode: "Mode clair"
+
+    },
+
+    search: {
+
+        placeholder: "Rechercher..."
+
+    },
+
     admin: {
 
         title: "Administration",

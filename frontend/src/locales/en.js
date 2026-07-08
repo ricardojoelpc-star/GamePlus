@@ -180,6 +180,26 @@ const en = {
 
     },
 
+    themes: {
+
+        blue: "Blue",
+
+        green: "Green",
+
+        purple: "Purple",
+
+        darkMode: "Dark mode",
+
+        lightMode: "Light mode"
+
+    },
+
+    search: {
+
+        placeholder: "Search..."
+
+    },
+
     admin: {
 
         title: "Administration",

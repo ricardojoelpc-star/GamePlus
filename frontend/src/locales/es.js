@@ -179,6 +179,26 @@ const es = {
 
     },
 
+    themes: {
+
+        blue: "Azul",
+
+        green: "Verde",
+
+        purple: "Morado",
+
+        darkMode: "Modo oscuro",
+
+        lightMode: "Modo claro"
+
+    },
+
+    search: {
+
+        placeholder: "Buscar..."
+
+    },
+
     admin: {
 
         title: "Administración",

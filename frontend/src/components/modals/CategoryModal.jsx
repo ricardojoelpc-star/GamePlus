@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import "../../styles/components/Modal.css";
 
 import {
     crearCategoria,
     actualizarCategoria
-} from "../services/categoryService";
+} from "../../services/categoryService";
 
-import "../styles/CategoryModal.css";
+
 
 function CategoryModal({
 

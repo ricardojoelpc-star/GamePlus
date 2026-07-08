@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import "../styles/Sidebar.css";
+import "../../styles/Sidebar.css";
 
 function Sidebar() {
 

@@ -1,0 +1,23 @@
+.layout {
+
+    display: flex;
+
+}
+
+.layout-content {
+
+    flex: 1;
+
+    min-height: calc(100vh - 70px);
+
+    padding: 35px;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+
+}

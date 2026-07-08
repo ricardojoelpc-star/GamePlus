@@ -1,38 +1,43 @@
+import Input from "./common/Input";
 import { useTranslation } from "react-i18next";
 
-function SearchBar({ valor, cambiar }) {
+function SearchBar({
+
+    value,
+
+    onChange,
+
+    placeholder
+
+}) {
 
     const { t } = useTranslation();
 
     return (
 
-        <input
+        <div className="searchbar">
 
-            type="text"
+            <Input
 
-            placeholder={t("catalog.search")}
+                value={value}
 
-            value={valor}
+                placeholder={
 
-            onChange={(e) => cambiar(e.target.value)}
+                    placeholder ||
 
-            style={{
+                    t("search.placeholder")
 
-                width: "100%",
+                }
 
-                padding: "15px",
+                onChange={(e) =>
 
-                borderRadius: "10px",
+                    onChange(e.target.value)
 
-                border: "1px solid #CCC",
+                }
 
-                fontSize: "16px",
+            />
 
-                marginBottom: "25px"
-
-            }}
-
-        />
+        </div>
 
     );
 

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
-import "../styles/Navbar.css";
+import "../../styles/Navbar.css";
 
 function Navbar() {
 

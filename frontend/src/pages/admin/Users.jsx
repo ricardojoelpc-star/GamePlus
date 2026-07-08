@@ -11,7 +11,7 @@ import {
 
 } from "../../services/userService";
 
-import UserModal from "../../components/UserModal";
+import UserModal from "../../components/modals/UserModal";
 
 function Users() {
 

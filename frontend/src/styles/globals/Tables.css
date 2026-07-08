@@ -1,0 +1,49 @@
+/* ===========================
+   TABLES
+=========================== */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+thead {
+
+    background: var(--primary);
+
+}
+
+th {
+
+    color: white;
+
+    padding: 16px;
+
+    text-align: left;
+
+}
+
+td {
+
+    padding: 16px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text);
+
+}
+
+tbody tr {
+
+    transition: .2s;
+
+}
+
+tbody tr:hover {
+
+    background: rgba(37,99,235,.06);
+
+}

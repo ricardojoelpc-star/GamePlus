@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import "../styles/VideoGameModal.css";
+import "../../styles/components/Modal.css";
 
 function VideoGameModal({
 

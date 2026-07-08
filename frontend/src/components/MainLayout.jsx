@@ -1,5 +1,7 @@
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Navbar from "./layout/Navbar";
+import Sidebar from "./layout/Sidebar";
+
+import "../styles/MainLayout.css";
 
 function MainLayout({ children }) {
 
@@ -9,22 +11,11 @@ function MainLayout({ children }) {
 
             <Navbar />
 
-            <div
-                style={{
-                    display: "flex"
-                }}
-            >
+            <div className="layout">
 
                 <Sidebar />
 
-                <main
-                    style={{
-                        flex: 1,
-                        padding: "35px",
-                        background: "#F5F5F5",
-                        minHeight: "calc(100vh - 70px)"
-                    }}
-                >
+                <main className="layout-content">
 
                     {children}
 

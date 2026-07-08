@@ -1,0 +1,121 @@
+/* ===========================
+   CARDS
+=========================== */
+
+.card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    transition: .25s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.dashboard-card {
+
+    background: var(--surface);
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+}
+
+.module-card {
+
+    background: var(--surface);
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+}
+
+.stat-card {
+
+    background: var(--surface);
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+}
+
+.game-card {
+
+    background: var(--surface);
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ===========================
+   BADGES
+=========================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.badge-primary{
+
+    background:var(--primary);
+
+    color:var(--button-text);
+
+}
+
+.badge-success{
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+.badge-warning{
+
+    background:#f59e0b;
+
+    color:white;
+
+}
+
+.badge-danger{
+
+    background:#ef4444;
+
+    color:white;
+
+}

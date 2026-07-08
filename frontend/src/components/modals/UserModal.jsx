@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { actualizarUsuario } from "../services/userService";
+import { actualizarUsuario } from "../../services/userService";
 
-import "../styles/UserModal.css";
+import "../../styles/components/Modal.css";
 
 function UserModal({
 

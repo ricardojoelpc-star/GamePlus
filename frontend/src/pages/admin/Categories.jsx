@@ -9,7 +9,7 @@ import {
     eliminarCategoria
 } from "../../services/categoryService";
 
-import CategoryModal from "../../components/CategoryModal";
+import CategoryModal from "../../components/modals/CategoryModal";
 
 function Categories() {
 

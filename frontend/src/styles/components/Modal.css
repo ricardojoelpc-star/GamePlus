@@ -1,0 +1,193 @@
+/* ==========================================
+   MODAL OVERLAY
+========================================== */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(0,0,0,.55);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 999;
+
+    animation: modalFade .25s ease;
+
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal {
+
+    width: 450px;
+
+    max-width: 95%;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.modal h2{
+
+    text-align:center;
+
+    color:var(--text);
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.modal form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.modal input,
+.modal textarea,
+.modal select{
+
+    width:100%;
+
+    padding:13px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+}
+
+.modal textarea{
+
+    resize:vertical;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.modal-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:10px;
+
+}
+
+.btn-save{
+
+    background:var(--primary);
+
+    color:var(--button-text);
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+.btn-save:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.btn-cancel{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+}
+
+.btn-cancel:hover{
+
+    background:var(--border);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:600px){
+
+    .modal{
+
+        width:95%;
+
+        padding:22px;
+
+    }
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes modalFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}

@@ -55,7 +55,7 @@ const it = {
         passwordMismatch: "Le password non coincidono."
 
     },
-    
+
     dashboard: {
 
         title: "Dashboard",
@@ -177,6 +177,26 @@ const it = {
         platform: "Piattaforma",
         image: "URL immagine",
         description: "Descrizione"
+
+    },
+
+    themes: {
+
+        blue: "Blu",
+
+        green: "Verde",
+
+        purple: "Viola",
+
+        darkMode: "Modalità scura",
+
+        lightMode: "Modalità chiara"
+
+    },
+
+    search: {
+
+        placeholder: "Cerca..."
 
     },
 

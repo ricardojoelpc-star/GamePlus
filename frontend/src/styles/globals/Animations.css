@@ -1,0 +1,79 @@
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.fade-in {
+
+    animation: fadeIn .4s ease;
+
+}
+
+.hover-up {
+
+    transition: .25s;
+
+}
+
+.hover-up:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.loader-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.loader{
+
+    width:45px;
+
+    height:45px;
+
+    border:5px solid var(--border);
+
+    border-top:5px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

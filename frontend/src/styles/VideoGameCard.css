@@ -1,63 +1,133 @@
-.game-card{
+/* =====================================
+   GAME CARD
+===================================== */
 
-    background:white;
+.game-card {
 
-    border-radius:12px;
+    display: flex;
 
-    overflow:hidden;
+    flex-direction: column;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    background: var(--surface);
 
-    transition:.3s;
+    border: 1px solid var(--border);
 
-}
+    border-radius: 18px;
 
-.game-card:hover{
+    overflow: hidden;
 
-    transform:translateY(-5px);
+    box-shadow: var(--shadow);
 
-}
-
-.game-card img{
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
+    transition: all .25s ease;
 
 }
 
-.game-card h3{
+.game-card:hover {
 
-    padding:15px;
+    transform: translateY(-8px);
 
-}
-
-.game-card p{
-
-    padding:0 15px 10px;
-
-    color:#555;
+    box-shadow: 0 12px 25px rgba(0,0,0,.15);
 
 }
 
-.game-card button{
+/* =====================================
+   IMAGE
+===================================== */
 
-    margin:15px;
+.game-card img {
 
-    width:calc(100% - 30px);
+    width: 100%;
 
-    padding:12px;
+    height: 220px;
 
-    border:none;
+    object-fit: cover;
 
-    border-radius:8px;
+}
 
-    background:#2563EB;
+/* =====================================
+   CONTENT
+===================================== */
 
-    color:white;
+.game-card h3 {
 
-    cursor:pointer;
+    padding: 18px 18px 10px;
+
+    color: var(--text);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+}
+
+.game-card p {
+
+    padding: 0 18px 12px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.game-card button {
+
+    margin: auto 18px 18px;
+
+    padding: 13px;
+
+    width: calc(100% - 36px);
+
+    background: var(--primary);
+
+    color: var(--button-text);
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+
+}
+
+.game-card button:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+
+}
+
+.game-card button:active {
+
+    transform: scale(.98);
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+    .game-card img{
+
+        height:190px;
+
+    }
+
+    .game-card h3{
+
+        font-size:18px;
+
+    }
 
 }
