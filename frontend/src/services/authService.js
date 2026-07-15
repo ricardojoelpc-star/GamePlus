@@ -1,22 +1,34 @@
-import axios from "axios";
-
-const API = axios.create({
-    baseURL: "http://localhost:3000/api/auth"
-});
+import API from "./api";
 
 export async function login(correo, password) {
 
-    const response = await API.post("/login", {
-        correo,
-        password
-    });
+    const response = await API.post(
+
+        "/auth/login",
+
+        {
+
+            correo,
+            password
+
+        }
+
+    );
 
     return response.data;
+
 }
 
 export async function register(usuario) {
 
-    const response = await API.post("/register", usuario);
+    const response = await API.post(
+
+        "/auth/register",
+
+        usuario
+
+    );
 
     return response.data;
+
 }
