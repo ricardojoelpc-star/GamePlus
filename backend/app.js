@@ -9,6 +9,8 @@ const categoriaRoutes = require("./routes/categoriaRoutes");
 const usuarioAdminRoutes = require("./routes/usuarioAdminRoutes");
 const perfilRoutes = require("./routes/perfilRoutes");
 const estadisticaRoutes = require("./routes/estadisticaRoutes");
+const steamRoutes = require("./routes/steamRoutes");
+
 
 const app = express();
 
@@ -31,5 +33,7 @@ app.use("/api/categorias", categoriaRoutes);
 app.use("/api/admin/usuarios", usuarioAdminRoutes);
 app.use("/api/perfil", perfilRoutes);
 app.use("/api/estadisticas", estadisticaRoutes);
+app.use("/api/steam", steamRoutes);
+app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 
 module.exports = app;

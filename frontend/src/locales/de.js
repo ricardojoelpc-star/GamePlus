@@ -62,8 +62,25 @@ const de = {
         welcome: "Willkommen",
         subtitle: "Dein GAMEPLUS-Kontrollzentrum.",
         favorites: "Favoriten",
-        games: "Videospiele",
-        categories: "Kategorien"
+        games: "Spiele",
+        categories: "Kategorien",
+
+        gamerProfile: "Spielerprofil",
+        steam: "Steam",
+        steamId: "Steam-ID",
+        noSteam: "Du hast kein verknüpftes Steam-Konto.",
+        topGames: "Meistgespielte Spiele",
+        noGames: "Keine Informationen verfügbar.",
+        recentActivity: "Letzte Aktivität",
+        noRecentActivity: "Keine aktuelle Aktivität.",
+        lastTwoWeeks: "Stunden in den letzten zwei Wochen",
+        library: "Bibliothek",
+        hours: "Stunden",
+        mostPlayed: "Meistgespielt",
+        loadingSteam: "Steam wird geladen...",
+
+        unlinkSteam: "Steam trennen",
+        unlinkSuccess: "Das Steam-Konto wurde erfolgreich getrennt."
 
     },
 
@@ -85,7 +102,16 @@ const de = {
         save: "Änderungen speichern",
         passwordPlaceholder: "Leer lassen, wenn das Passwort nicht geändert werden soll",
         success: "Profil erfolgreich aktualisiert.",
-        error: "Profil konnte nicht aktualisiert werden."
+        error: "Profil konnte nicht aktualisiert werden.",
+
+        steamAccount: "Steam-Konto",
+        steamPlaceholder: "SteamID64",
+        linkSteam: "Steam-Konto verknüpfen",
+        linkedAccount: "Verknüpftes Konto",
+        steamAvatar: "Steam-Avatar",
+        enterSteamId: "Gib deine Steam-ID ein.",
+        steamLinkError: "Steam-Konto konnte nicht verknüpft werden.",
+        steamUnlinkError: "Steam-Konto konnte nicht getrennt werden."
 
     },
 
@@ -183,13 +209,9 @@ const de = {
     themes: {
 
         blue: "Blau",
-
         green: "Grün",
-
         purple: "Lila",
-
         darkMode: "Dunkelmodus",
-
         lightMode: "Hellmodus"
 
     },

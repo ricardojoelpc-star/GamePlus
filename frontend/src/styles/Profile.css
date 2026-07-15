@@ -1,3 +1,7 @@
+/* =====================================
+   PROFILE STYLES
+===================================== */
+
 .profile{
 
     max-width:700px;
@@ -31,5 +35,131 @@
 .profile label{
 
     font-weight:600;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    .container,
+    .dashboard,
+    .main-layout{
+
+        padding:15px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
+
+}
+
+/* ==========================================
+   BOTONES DE STEAM
+========================================== */
+
+.steam-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:15px;
+
+    margin-bottom:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.steam-buttons button{
+
+    flex:1;
+
+    min-width:200px;
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+/* Botón Vincular */
+
+.btn-steam{
+
+    background:var(--primary);
+
+    color:var(--text-light);
+
+}
+
+.btn-steam:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.9;
+
+}
+
+/* Botón Desvincular */
+
+.btn-unlink-steam{
+
+    background:#DC2626;
+
+    color:white;
+
+}
+
+.btn-unlink-steam:hover{
+
+    background:#B91C1C;
+
+    transform:translateY(-3px);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .steam-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .steam-buttons button{
+
+        width:100%;
+
+    }
 
 }

@@ -63,7 +63,24 @@ const fr = {
         subtitle: "Votre centre de contrôle GAMEPLUS.",
         favorites: "Favoris",
         games: "Jeux vidéo",
-        categories: "Catégories"
+        categories: "Catégories",
+
+        gamerProfile: "Profil Joueur",
+        steam: "Steam",
+        steamId: "ID Steam",
+        noSteam: "Vous n'avez pas de compte Steam lié.",
+        topGames: "Jeux les plus joués",
+        noGames: "Aucune information disponible.",
+        recentActivity: "Activité récente",
+        noRecentActivity: "Aucune activité récente.",
+        lastTwoWeeks: "heures au cours des deux dernières semaines",
+        library: "Bibliothèque",
+        hours: "Heures",
+        mostPlayed: "Le plus joué",
+        loadingSteam: "Chargement de Steam...",
+
+        unlinkSteam: "Dissocier Steam",
+        unlinkSuccess: "Le compte Steam a été dissocié avec succès."
 
     },
 
@@ -85,7 +102,16 @@ const fr = {
         save: "Enregistrer les modifications",
         passwordPlaceholder: "Laissez vide si vous ne souhaitez pas le modifier",
         success: "Profil mis à jour avec succès.",
-        error: "Impossible de mettre à jour le profil."
+        error: "Impossible de mettre à jour le profil.",
+
+        steamAccount: "Compte Steam",
+        steamPlaceholder: "SteamID64",
+        linkSteam: "Associer un compte Steam",
+        linkedAccount: "Compte associé",
+        steamAvatar: "Avatar Steam",
+        enterSteamId: "Saisissez votre SteamID.",
+        steamLinkError: "Impossible d'associer le compte Steam.",
+        steamUnlinkError: "Impossible de dissocier le compte Steam."
 
     },
 
@@ -183,13 +209,9 @@ const fr = {
     themes: {
 
         blue: "Bleu",
-
         green: "Vert",
-
         purple: "Violet",
-
         darkMode: "Mode sombre",
-
         lightMode: "Mode clair"
 
     },

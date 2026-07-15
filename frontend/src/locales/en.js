@@ -63,7 +63,25 @@ const en = {
         subtitle: "Your GAMEPLUS control center.",
         favorites: "Favorites",
         games: "Games",
-        categories: "Categories"
+        categories: "Categories",
+
+        gamerProfile: "Gamer Profile",
+        steam: "Steam",
+        steamId: "Steam ID",
+        noSteam: "You don't have a linked Steam account.",
+        topGames: "Most Played Games",
+        noGames: "No information available.",
+        recentActivity: "Recent Activity",
+        noRecentActivity: "No recent activity.",
+        lastTwoWeeks: "hours in the last two weeks",
+        library: "Library",
+        hours: "Hours",
+        mostPlayed: "Most Played",
+        loadingSteam: "Loading Steam...",
+
+        unlinkSteam: "Unlink Steam",
+        unlinkSuccess: "Steam account unlinked successfully."
+
 
     },
 
@@ -85,7 +103,16 @@ const en = {
         save: "Save changes",
         passwordPlaceholder: "Leave empty if you don't want to change it",
         success: "Profile updated successfully.",
-        error: "Unable to update profile."
+        error: "Unable to update profile.",
+
+        steamAccount: "Steam Account",
+        steamPlaceholder: "SteamID64",
+        linkSteam: "Link Steam Account",
+        linkedAccount: "Linked Account",
+        steamAvatar: "Steam Avatar",
+        enterSteamId: "Enter your SteamID.",
+        steamLinkError: "Could not link the Steam account.",
+        steamUnlinkError: "Could not unlink the Steam account."
 
     },
 
@@ -183,13 +210,9 @@ const en = {
     themes: {
 
         blue: "Blue",
-
         green: "Green",
-
         purple: "Purple",
-
         darkMode: "Dark mode",
-
         lightMode: "Light mode"
 
     },

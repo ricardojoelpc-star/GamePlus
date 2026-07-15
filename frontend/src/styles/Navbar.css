@@ -1,3 +1,7 @@
+/* =====================================
+   NAVBAR STYLES
+===================================== */
+
 .navbar {
 
     height: 70px;
@@ -78,5 +82,37 @@
     border-color: var(--primary);
 
     transform: translateY(-2px);
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    .container,
+    .dashboard,
+    .main-layout{
+
+        padding:15px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
 
 }

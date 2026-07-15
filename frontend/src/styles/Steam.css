@@ -1,0 +1,371 @@
+/* =====================================
+   TARJETA PRINCIPAL DE STEAM
+===================================== */
+
+.steam-card{
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+}
+
+/* =====================================
+   ENCABEZADO DEL PERFIL
+===================================== */
+
+.steam-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+/* =====================================
+   AVATAR DEL USUARIO
+===================================== */
+
+.steam-header img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+}
+
+/* =====================================
+   ESTADÍSTICAS DEL PERFIL
+===================================== */
+
+.steam-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+/* Tarjetas individuales de estadísticas */
+
+.steam-stats div{
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* Valores numéricos */
+
+.steam-stats span{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+/* =====================================
+   SECCIONES DEL PANEL
+===================================== */
+
+.steam-section{
+
+    margin-top:35px;
+
+}
+
+/* =====================================
+   GRID DE JUEGOS MÁS JUGADOS
+===================================== */
+
+.top-games{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+/* Tarjeta individual de un juego */
+
+.top-game{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+/* Hover del juego */
+
+.top-game:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* Imagen del juego */
+
+.top-game img{
+
+    width:100%;
+
+}
+
+/* Nombre del juego */
+
+.top-game h4{
+
+    padding:12px;
+
+}
+
+/* Horas jugadas */
+
+.top-game p{
+
+    padding:0 12px 15px;
+
+}
+
+/* =====================================
+   GRID DE ACTIVIDAD RECIENTE
+===================================== */
+
+.recent-games{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+}
+
+/* Tarjeta de juego reciente */
+
+.recent-game{
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* Imagen del juego */
+
+.recent-game img{
+
+    width:100%;
+
+}
+
+/* Texto inferior */
+
+.recent-game p{
+
+    padding:10px;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+/* =====================================
+   ESTILOS FINALES DE LA TARJETA
+===================================== */
+
+.steam-card{
+
+    background:var(--surface);
+
+    border-radius:20px;
+
+    padding:25px;
+
+}
+
+/* Encabezado */
+
+.steam-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+/* Avatar */
+
+.steam-header img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+}
+
+/* Grid de estadísticas */
+
+.steam-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+/* Tarjetas de estadísticas */
+
+.steam-stats div{
+
+    background:var(--surface-secondary);
+
+    border-radius:15px;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+/* Título de cada estadística */
+
+.steam-stats h4{
+
+    margin-bottom:10px;
+
+}
+
+/* Valor de la estadística */
+
+.steam-stats span{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    /* Reorganizar encabezado */
+
+    .steam-header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    /* Avatar más grande */
+
+    .steam-header img{
+
+        width:110px;
+
+        height:110px;
+
+    }
+
+    /* Una columna para estadísticas */
+
+    .steam-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* =====================================
+   ANIMACIÓN DEL AVATAR
+===================================== */
+
+.steam-header img{
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+}
+
+/* Hover del avatar */
+
+.steam-header img:hover{
+
+    transform:rotate(5deg) scale(1.08);
+
+    box-shadow:0 0 20px color-mix(in srgb, var(--primary) 45%, transparent);
+
+}
+
+/* =====================================
+   ANIMACIÓN DE TARJETAS
+===================================== */
+
+.steam-stats div{
+
+    transition:
+
+        transform .25s ease,
+
+        background .25s ease;
+
+}
+
+/* Hover de estadísticas */
+
+.steam-stats div:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--surface);
+
+}

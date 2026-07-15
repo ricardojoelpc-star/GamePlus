@@ -1,3 +1,7 @@
+/* =====================================
+   SIDEBAR STYLES
+===================================== */
+
 .sidebar {
 
     width: 250px;
@@ -73,5 +77,37 @@
     color: var(--button-text);
 
     font-weight: bold;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    .container,
+    .dashboard,
+    .main-layout{
+
+        padding:15px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
 
 }

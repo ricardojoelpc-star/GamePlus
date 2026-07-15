@@ -1,4 +1,5 @@
 const Perfil = require("../models/Perfil");
+const steamService = require("../services/steamService");
 
 // Obtener perfil
 async function obtenerPerfil(req, res) {
@@ -108,10 +109,67 @@ async function cambiarPassword(req, res) {
 
 }
 
+async function vincularSteam(req, res) {
+
+    try {
+
+        const { idUsuario } = req.params;
+
+        const { steamId } = req.body;
+
+        const perfilSteam = await steamService.obtenerPerfil(
+
+            steamId
+
+        );
+
+        if (!perfilSteam) {
+
+            return res.status(404).json({
+
+                mensaje: "No se encontró el perfil de Steam."
+
+            });
+
+        }
+
+        await steamService.guardarCuentaSteam(
+
+            idUsuario,
+
+            perfilSteam
+
+        );
+
+        res.json({
+
+            mensaje: "Cuenta de Steam vinculada correctamente.",
+
+            perfil: perfilSteam
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+
+            mensaje: "Error al vincular la cuenta de Steam."
+
+        });
+
+    }
+
+}
+
 module.exports = {
 
     obtenerPerfil,
     actualizarPerfil,
-    cambiarPassword
+    cambiarPassword,
+    vincularSteam
 
 };

@@ -1,3 +1,7 @@
+/* =====================================
+   STATISTICS STYLES
+===================================== */
+
 .statistics{
 
     padding:30px;
@@ -34,7 +38,7 @@
 
     font-size:42px;
 
-    color:#2563EB;
+    color:var(--primary);
 
     margin-bottom:10px;
 
@@ -45,5 +49,37 @@
     font-size:18px;
 
     font-weight:600;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    .container,
+    .dashboard,
+    .main-layout{
+
+        padding:15px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
 
 }

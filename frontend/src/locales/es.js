@@ -62,7 +62,24 @@ const es = {
         subtitle: "Tu centro de control de GAMEPLUS.",
         favorites: "Favoritos",
         games: "Videojuegos",
-        categories: "Categorías"
+        categories: "Categorías",
+
+        gamerProfile: "Perfil Gamer",
+        steam: "Steam",
+        steamId: "ID de Steam",
+        noSteam: "No tienes una cuenta de Steam vinculada.",
+        topGames: "Juegos más jugados",
+        noGames: "No hay información disponible.",
+        recentActivity: "Actividad reciente",
+        noRecentActivity: "No hay actividad reciente.",
+        lastTwoWeeks: "horas en las últimas 2 semanas",
+        library: "Biblioteca",
+        hours: "Horas",
+        mostPlayed: "Más jugado",
+        loadingSteam: "Cargando Steam...",
+
+        unlinkSteam: "Desvincular Steam",
+        unlinkSuccess: "La cuenta de Steam se desvinculó correctamente."
 
     },
 
@@ -84,7 +101,16 @@ const es = {
         save: "Guardar cambios",
         passwordPlaceholder: "Deja vacío si no deseas cambiarla",
         success: "Perfil actualizado correctamente.",
-        error: "No fue posible actualizar el perfil."
+        error: "No fue posible actualizar el perfil.",
+        steamAccount: "Cuenta de Steam",
+
+        steamPlaceholder: "SteamID64",
+        linkSteam: "Vincular cuenta de Steam",
+        linkedAccount: "Cuenta vinculada",
+        steamAvatar: "Avatar de Steam",
+        enterSteamId: "Ingresa tu SteamID.",
+        steamLinkError: "No fue posible vincular la cuenta de Steam.",
+        steamUnlinkError: "No fue posible desvincular la cuenta de Steam."
 
     },
 

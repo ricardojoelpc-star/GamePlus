@@ -50,3 +50,27 @@ export async function cambiarPassword(idUsuario, password) {
     return response.data;
 
 }
+
+export async function vincularSteam(
+
+    idUsuario,
+
+    steamId
+
+) {
+
+    const response = await API.post(
+
+        `/perfil/${idUsuario}/steam`,
+
+        {
+
+            steamId
+
+        }
+
+    );
+
+    return response.data;
+
+}

@@ -59,9 +59,9 @@ function Catalog() {
 
             <SearchBar
 
-                valor={busqueda}
+                value={busqueda}
 
-                cambiar={setBusqueda}
+                onChange={setBusqueda}
 
             />
 

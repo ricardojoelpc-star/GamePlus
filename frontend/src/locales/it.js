@@ -63,7 +63,25 @@ const it = {
         subtitle: "Il tuo centro di controllo GAMEPLUS.",
         favorites: "Preferiti",
         games: "Videogiochi",
-        categories: "Categorie"
+        categories: "Categorie",
+
+        gamerProfile: "Profilo Gamer",
+        steam: "Steam",
+        steamId: "ID Steam",
+        noSteam: "Non hai un account Steam collegato.",
+        topGames: "Giochi più giocati",
+        noGames: "Nessuna informazione disponibile.",
+        recentActivity: "Attività recente",
+        noRecentActivity: "Nessuna attività recente.",
+        lastTwoWeeks: "ore nelle ultime due settimane",
+        library: "Libreria",
+        hours: "Ore",
+        mostPlayed: "Più giocato",
+        loadingSteam: "Caricamento di Steam...",
+
+        unlinkSteam: "Scollega Steam",
+        unlinkSuccess: "L'account Steam è stato scollegato correttamente."
+
 
     },
 
@@ -85,7 +103,16 @@ const it = {
         save: "Salva modifiche",
         passwordPlaceholder: "Lascia vuoto se non desideri modificarla",
         success: "Profilo aggiornato correttamente.",
-        error: "Impossibile aggiornare il profilo."
+        error: "Impossibile aggiornare il profilo.",
+
+        steamAccount: "Account Steam",
+        steamPlaceholder: "SteamID64",
+        linkSteam: "Collega account Steam",
+        linkedAccount: "Account collegato",
+        steamAvatar: "Avatar Steam",
+        enterSteamId: "Inserisci il tuo SteamID.",
+        steamLinkError: "Impossibile collegare l'account Steam.",
+        steamUnlinkError: "Impossibile scollegare l'account Steam.",
 
     },
 
@@ -183,13 +210,9 @@ const it = {
     themes: {
 
         blue: "Blu",
-
         green: "Verde",
-
         purple: "Viola",
-
         darkMode: "Modalità scura",
-
         lightMode: "Modalità chiara"
 
     },

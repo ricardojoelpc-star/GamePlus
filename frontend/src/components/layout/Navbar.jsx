@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
 import { useAuth } from "../../contexts/AuthContext";
 
 import "../../styles/Navbar.css";
@@ -8,6 +10,16 @@ function Navbar() {
     const { usuario, logout } = useAuth();
 
     const { t } = useTranslation();
+
+    const navigate = useNavigate();
+
+    function cerrarSesion() {
+
+        logout();
+
+        navigate("/");
+
+    }
 
     return (
 
@@ -31,7 +43,7 @@ function Navbar() {
 
                     className="logout-button"
 
-                    onClick={logout}
+                    onClick={cerrarSesion}
 
                 >
 

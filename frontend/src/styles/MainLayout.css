@@ -1,3 +1,7 @@
+/* =====================================
+   MAINLAYOUT STYLES
+===================================== */
+
 .layout {
 
     display: flex;
@@ -19,5 +23,37 @@
     transition:
         background-color .25s ease,
         color .25s ease;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    .container,
+    .dashboard,
+    .main-layout{
+
+        padding:15px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
 
 }

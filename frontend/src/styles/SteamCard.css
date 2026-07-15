@@ -1,0 +1,132 @@
+/* =====================================
+   TARJETA PRINCIPAL DE STEAM
+===================================== */
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+
+.steam-card{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+    margin-bottom:30px;
+
+}
+
+/* =====================================
+   ENCABEZADO DEL PERFIL
+===================================== */
+
+.steam-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+/* Avatar del usuario */
+
+.steam-header img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+}
+
+/* Nombre del usuario */
+
+.steam-header h2{
+
+    margin:0;
+
+}
+
+/* =====================================
+   ESTADÍSTICAS DE STEAM
+===================================== */
+
+.steam-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:25px;
+
+}
+
+/* Tarjeta individual de estadística */
+
+.steam-stats div{
+
+    text-align:center;
+
+}
+
+/* Valor de la estadística */
+
+.steam-stats span{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+/* =====================================
+   JUEGO MÁS JUGADO
+===================================== */
+
+.top-game{
+
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid #ddd;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width:768px){
+
+    .container,
+    .dashboard,
+    .main-layout{
+
+        padding:15px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
+
+}

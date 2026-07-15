@@ -22,4 +22,12 @@ router.put(
 
 );
 
+router.post(
+
+    "/:idUsuario/steam",
+
+    perfilController.vincularSteam
+
+);
+
 module.exports = router;

@@ -10,7 +10,9 @@ async function obtenerEstadisticas(req, res) {
 
         res.json(estadisticas);
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(error);
 
